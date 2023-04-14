@@ -1,0 +1,91 @@
+﻿@model webBanGiay.Models.Giay
+
+@{
+    ViewBag.Title = "HienThi";
+    Layout = "~/Views/layout/AdminLayout.cshtml";
+}
+
+<h2>HienThi</h2>
+
+<div>
+    <h4>Giay</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MaGiay)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaGiay)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TenGiay)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenGiay)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GiaBan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GiaBan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AnhGiay)
+        </dt>
+
+        <dd>
+            <img src="@Url.Content("~/AnhGiay/"+Model.AnhGiay)" width="490px" height="500" alt=""></a>
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NgayCapNhat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayCapNhat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SoLuongTon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoLuongTon)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NhaSanXuat.TenNSX)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NhaSanXuat.TenNSX)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Loai.TenLoai)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Loai.TenLoai)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Moi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Moi)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "ChinhSua", new { @MaGiay = Model.MaGiay }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

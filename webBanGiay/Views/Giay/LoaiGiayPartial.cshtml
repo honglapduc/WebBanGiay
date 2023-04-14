@@ -1,0 +1,42 @@
+﻿@*@using webBanGiay.Models;
+    <link href="~/Content/Css/tieude.css" rel="stylesheet" />
+    @model List<Loai>
+    @foreach (var item in Model)
+        {
+
+                            <a class="activetieude" href="@Url.Action("GiayTheoLoai", new {@MaLoai =item.MaLoai})">@item.TenLoai</a>
+        }*@
+@*@using webBanGiay.Models;
+    <link href="~/Content/Css/tieude.css" rel="stylesheet" />
+    @model List<Loai>
+
+    @{
+        var selectList = new SelectList(Model, "MaLoai", "TenLoai");
+    }
+
+    @Html.DropDownList("Loai", selectList, "-- Chọn loại giày --", new { onchange = "location = this.value;" })
+
+*@
+@using webBanGiay.Models;
+<link href="~/Content/Css/tieude.css" rel="stylesheet" />
+@model List<Loai>
+
+@{
+    var selectList = new SelectList(Model, "MaLoai", "TenLoai");
+}
+
+@Html.DropDownList("Loai", selectList, "-- Chọn loại giày --", new { onchange = "redirectToSelectedLoai(this)" })
+
+<script>
+    function redirectToSelectedLoai(ddl) {
+        var selectedValue = ddl.value;
+        if (selectedValue != "") {
+            var url = "@Url.Action("GiayTheoLoai", new { MaLoai = "_MaLoai_" })".replace("_MaLoai_", selectedValue);
+            window.location.href = url;
+        }
+    }
+</script>
+
+
+
+

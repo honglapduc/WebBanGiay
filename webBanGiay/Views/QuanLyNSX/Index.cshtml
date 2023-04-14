@@ -1,0 +1,46 @@
+﻿@model IEnumerable<webBanGiay.Models.NhaSanXuat>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/layout/AdminLayout.cshtml";
+}
+
+
+
+<p>
+    @Html.ActionLink("Create New", "ThemMoiNSX")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MaNSX)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TenNSX)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DiaChi)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaNSX)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenNSX)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DiaChi)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "ChinhSuaNSX", new { @MaNSX = item.MaNSX }) |
+           @* @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |*@
+            @Html.ActionLink("Delete", "XoaNSX", new { @MaNSX = item.MaNSX })
+        </td>
+    </tr>
+}
+
+</table>

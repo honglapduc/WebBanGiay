@@ -1,0 +1,54 @@
+﻿@model IEnumerable<webBanGiay.Models.ChiTietDonHang>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/layout/AdminLayout.cshtml";
+}
+
+@*<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>*@
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MaDonHang)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Giay.TenGiay)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SoLuong)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DonGia)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaDonHang)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Giay.TenGiay)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SoLuong)
+        </td>
+        <td>
+            @* @Html.DisplayFor(modelItem => item.DonGia)*@
+            @string.Format("{0:#,#} VND", item.DonGia)
+            
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "ChinhSuaCTDH", new { @MaDH = item.MaDonHang, @MaGiay = item.MaGiay }) |
+         @*   @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |*@
+            @Html.ActionLink("Delete", "XoaCTDH", new { @MaDH = item.MaDonHang , @MaGiay = item.MaGiay })
+        </td>
+    </tr>
+}
+
+</table>

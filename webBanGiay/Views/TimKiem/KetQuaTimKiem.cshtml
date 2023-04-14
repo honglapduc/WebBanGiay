@@ -1,0 +1,44 @@
+﻿@using webBanGiay.Models;
+@using PagedList.Mvc;
+@using PagedList;
+@model IPagedList<webBanGiay.Models.Giay>
+
+@{
+    ViewBag.Title = "KetQuaTimKiem";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Kết quả tìm kiếm</h2>
+<h2>@ViewBag.ThongBao</h2>
+
+@foreach (var item in Model)
+    {
+        <div class="col4">
+            <a href="@Url.Action("XemChiTiet","Giay", new {@MaGiay=item.MaGiay})">
+                <img src="@Url.Content("~/AnhGiay/"+item.AnhGiay)" width="490px" height="500" alt="">
+            </a>
+            <h4>@item.TenGiay</h4>
+            <h4>Giá Tiền: @String.Format("{0:0,0}", item.GiaBan) VND</h4>
+            <div class="rating">
+                @using (Html.BeginForm("ThemGioHang", "GioHang", new { @iMaGiay = item.MaGiay, @strUrl = Request.Url.ToString() }))
+                {
+                    // <input type="submit" style="cursor:pointer" value="Mua Hàng" id="btnGiohang" class="btn btn-primary" />
+                }
+            </div>
+        </div>
+    }
+
+<br />
+<div>
+    Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/ @Model.PageCount
+    <div class="menutrang">
+        @Html.PagedListPager(Model, page => Url.Action("KetQuaTimKiem", new { page = page  ,@sTuKHoa =ViewBag.TuKHoa}))
+
+    </div>
+</div>
+<style>
+    .menutrang {
+        display: inline;
+    }
+</style>
+

@@ -1,0 +1,28 @@
+﻿.dangkydangnhap a:hover{
+    text-decoration:none;
+    color: red;
+}
+.dangkydangnhap a {
+    color: white;
+    text-decoration: none;
+}
+.thanhmenu a {
+    text-decoration: none;
+    color: white;
+    margin-left: 10px;
+
+    
+}
+
+    .thanhmenu a:hover {
+        color: red;
+    }
+
+.btntimkiem{
+    background-color: red;
+    color: black;
+}
+.btntimkiem:hover{
+    background-color: burlywood;
+    color: blue;
+}

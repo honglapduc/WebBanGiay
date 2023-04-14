@@ -1,0 +1,64 @@
+﻿@using webBanGiay.Models
+@model Giay
+
+@{
+    ViewBag.Title = "XemChiTiet";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+
+</style>
+
+<div id="HinhAnh">
+    <img src="@Url.Content("~/AnhGiay/"+Model.AnhGiay)" width="490px" height="500" />
+</div>
+<div id="ThongTin">
+    <div id="tengiay"> @Model.TenGiay</div>
+    <div id="maigiay">Loại giày: @ViewBag.Loaigiay</div>
+
+    <div id="NhaSX">Nhà Sản Xuất: @ViewBag.NhaSX</div>
+    <div id="gia"><span style="color: forestgreen; font-weight: normal;">Giá Tiền:</span><br /><span id="gia"> @String.Format("{0:0,0}", Model.GiaBan) VND</span></div>
+    <br />
+    @using(Html.BeginForm("ThemGioHang","GioHang",new { @iMaGiay = Model.MaGiay, @strUrl = Request.Url.ToString()}))
+    {
+            <input type="submit" style="cursor:pointer" value="Mua Hàng" id="btnGiohang" class="btn btn-primary" />
+    }
+</div>
+<style>
+
+    #HinhAnh{
+        float: left;
+    }
+    #ThongTin {
+        width: 450px;
+        position: absolute;
+        top:700px;
+    }
+    #tengiay{
+        font-weight: normal;
+        font-size: 20pt;
+        height:auto;
+        word-wrap:break-word;
+        color:red;
+    }
+    #maigiay #NhaSX {
+        font-size: 15pt;
+        font-weight: normal;
+        color: black;
+        height:auto;
+    }
+    #gia span#gia {
+        font-weight: normal;
+        color: orange;
+        font-size: 25pt;
+        height:auto;
+
+    }
+    #btnGiohang{
+        background-color:red;
+    }
+        #btnGiohang:hover {
+            background-color: rgb(33, 225, 33);
+            
+        }
+</style>

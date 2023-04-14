@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ba90ef282dd44c1d95ecb4ae603eaddc" Name="Diagram1">
+        <EntityTypeShape EntityType="WebBanGiayDemoModel.ChiTietDonHang" Width="1.5" PointX="5.25" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebBanGiayDemoModel.DonHang" Width="1.5" PointX="3" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebBanGiayDemoModel.Giay" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebBanGiayDemoModel.KhachHang" Width="1.5" PointX="0.75" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebBanGiayDemoModel.Loai" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebBanGiayDemoModel.NhaSanXuat" Width="1.5" PointX="0.75" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebBanGiayDemoModel.sysdiagram" Width="1.5" PointX="2.75" PointY="5.75" IsExpanded="true" />
+        <AssociationConnector Association="WebBanGiayDemoModel.FK_ChiTietDonHang_DonHang" ManuallyRouted="false" />
+        <AssociationConnector Association="WebBanGiayDemoModel.FK_ChiTietDonHang_Giay" ManuallyRouted="false" />
+        <AssociationConnector Association="WebBanGiayDemoModel.FK_DonHang_KhachHang" ManuallyRouted="false" />
+        <AssociationConnector Association="WebBanGiayDemoModel.FK_Giay_Loai" ManuallyRouted="false" />
+        <AssociationConnector Association="WebBanGiayDemoModel.FK_Giay_NhaSanXuat" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
